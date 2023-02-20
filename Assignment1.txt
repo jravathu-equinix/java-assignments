@@ -1,0 +1,36 @@
+Implementation of ENCAPSULATION, ABSTRACTION, POLYMORPHISM and INHERITANCE are explained below
+
+- ENCAPSULATION
+
+A private and a public variables are made in Parent class. In Assignment1 class, public variable is directly accesible. 
+But to access private variable, getter and setter functions are used.
+
+
+- ABSTRACTION
+
+Abstract class Animal is used with abstract method "legs". So this method has to be overridden by non-abstract sub class. 
+Duck and cheetah are 2 non abstract child classes of Animal. These implement legs method according to their own. 
+Since Animal is abstract, its instance cannot be directly created. Instances of subclasses are created and treated as Animal objects. 
+Same method legs is implemented using 2 objects. 
+
+
+- POLYMORPHISM
+
+1. Method overloading - Two functions defined in parent class with same name numbers but different parameters. 
+They both are executed in the main method.
+
+2. Method Overriding - Parent is the parent class and Assignment1 is its child class. Both classes have same function. 
+If child class object is created and the method is executed, if child class has the method too, it will override, else parent class's method will be executed.
+
+
+INHERITANCE
+
+1. Single Inheritance
+Assignment1 class's object can access both methods from its class and parents class.
+
+2. Multilevel Inheritance
+Parent is parent class of Brother class. Brother class is the parent of BKid class. 
+So BKidclass's object can access methods from its class, Brother class, and also Parent class. 
+
+3. Hierarchial Inheritance
+Both Brother and Sister classes have same parent class Parent.So both objects can acces methods from parent's class

@@ -1,0 +1,12 @@
+{
+    "bookstore":{
+        "books":
+        {
+            "book":"book",
+            "b1":"b1",
+            "b2":"b2"
+        },
+        "book1":"bla",
+        "book2":"bla2"
+    }
+}

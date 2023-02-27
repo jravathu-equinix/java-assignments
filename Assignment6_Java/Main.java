@@ -12,25 +12,30 @@ import java.util.Iterator;
 
 class Checker
 {
+    int count = 0;
     public void checker(JSONObject jsonObject)
     {
         Iterator<String> outerKeys = jsonObject.keySet().iterator();
 
             while (outerKeys.hasNext()) {
                 String outerKey = outerKeys.next();
-
                 JSONObject innerObject = (JSONObject) jsonObject.get(outerKey);
+                count++;
 
-                Iterator<String> innerKeys = innerObject.keySet().iterator();
+                if(count<=2)
+                    checker(innerObject);
+                else
+                {
+                    Iterator<String> innerKeys = innerObject.keySet().iterator();
+                    while (innerKeys.hasNext()) {
+                        String innerKey = innerKeys.next();
 
-                while (innerKeys.hasNext()) {
-                    String innerKey = innerKeys.next();
-
-                    if (outerKey.contains(innerKey)) 
-                    {
-                        Object innerValue = innerObject.get(innerKey);
-                        jsonObject.put(innerKey, innerValue);
-                        innerKeys.remove();
+                        if (outerKey.contains(innerKey)) 
+                        {
+                            Object innerValue = innerObject.get(innerKey);
+                            jsonObject.put(innerKey, innerValue);
+                            innerKeys.remove();
+                        }
                     }
                 }
             }
